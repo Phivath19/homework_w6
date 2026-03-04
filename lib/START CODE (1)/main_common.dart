@@ -60,7 +60,7 @@ class _MyAppState extends State<MyApp> {
               label: 'Library',
             ),
              BottomNavigationBarItem(
-              icon: Icon(Icons.heart_broken),
+              icon: Icon(Icons.favorite),
               label: 'Favorites',
             ),
             BottomNavigationBarItem(
