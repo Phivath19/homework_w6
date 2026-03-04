@@ -1,6 +1,7 @@
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
-
+import 'data/repositories/user/user_history_repo.dart';       
+import 'data/repositories/user/user_history_repo_mock.dart';   
 import 'main_common.dart';
 import 'data/repositories/settings/app_settings_repository.dart';
 import 'data/repositories/settings/app_settings_repository_mock.dart';
@@ -24,6 +25,10 @@ List<SingleChildWidget> get devProviders {
     Provider<AppSettingsRepository>(create: (_) => settingsRepository),
 
     // 4 - Inject the app setting state with repository
+
+    
+    Provider<UserHistoryRepository>(create: (_) => UserHistoryRepositoryMock()),
+
     ChangeNotifierProvider<AppSettingsState>(
       create: (_) {
         final state = AppSettingsState(repository: settingsRepository);
